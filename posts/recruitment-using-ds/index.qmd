@@ -35,6 +35,8 @@ While goals and assists are the most famous stats, they are often noisy and misl
 
 - **Expected Goals (xG)**: Based on the position of the ball, the position of the goalkeeper etc., it measures how likely is it that a goal will be scored given those conditions. [@football_xg]
 
+![An xG shot map showing how shot location impacts goal probability.](shot-map.png){#fig-shot-map fig-align="center" width="80%"}
+
 - **Progressive Carries**: Measures how far a player moves the ball toward the opponent’s goal. [@progressive_carries]
 
 - **Packing Rate**: A metric that counts how many defenders are bypassed by a single pass. [@rwth_packing]
@@ -45,7 +47,9 @@ By focusing on these “hidden” metrics, clubs can identify players who are pe
 
 One of the most powerful tools in a data scientist’s arsenal is the Similarity Model. Imagine a club like Brighton & Hove Albion is about to sell their main midfielder for $115 million. They need a replacement, but they don't want to spend $115 million to get one.
 
-Using a technique like **K-Nearest Neighbors (KNN)**, analysts can create a mapping of their departing star. Then they search the global database for a "mathematical twin" – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely).
+Using a technique like **K-Nearest Neighbors (KNN)**, analysts can create a mapping of their departing star. Then they search the global database for a "mathematical twin" – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely). An example radar can be seen in @fig-radar.
+
+![Radar Chart for Danny Welbeck](radar-comparison.png){#fig-radar fig-align="center" width="80%"}
 
 This is how clubs find undervalued gems. They don’t look for the most famous player but rather, they look for the most efficient statistical profile for their specific system.
 

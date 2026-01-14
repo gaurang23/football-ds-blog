@@ -203,7 +203,19 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="feature-engineering-moving-beyond-the-basics">Feature Engineering: Moving Beyond the Basics</h3>
 <p>While goals and assists are the most famous stats, they are often noisy and misleading. Data scientists use Feature Engineering to create more predictive metrics. <span class="citation" data-cites="ibm_feature">(<a href="#ref-ibm_feature" role="doc-biblioref">IBM 2024</a>)</span></p>
 <ul>
-<li><p><strong>Expected Goals (xG)</strong>: Based on the position of the ball, the position of the goalkeeper etc., it measures how likely is it that a goal will be scored given those conditions. <span class="citation" data-cites="football_xg">(<a href="#ref-football_xg" role="doc-biblioref">xG 2024</a>)</span></p></li>
+<li><strong>Expected Goals (xG)</strong>: Based on the position of the ball, the position of the goalkeeper etc., it measures how likely is it that a goal will be scored given those conditions. <span class="citation" data-cites="football_xg">(<a href="#ref-football_xg" role="doc-biblioref">xG 2024</a>)</span></li>
+</ul>
+<div id="fig-shot-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shot-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="shot-map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shot-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: An xG shot map showing how shot location impacts goal probability.
+</figcaption>
+</figure>
+</div>
+<ul>
 <li><p><strong>Progressive Carries</strong>: Measures how far a player moves the ball toward the opponent’s goal. <span class="citation" data-cites="progressive_carries">(<a href="#ref-progressive_carries" role="doc-biblioref">Analyst 2024</a>)</span></p></li>
 <li><p><strong>Packing Rate</strong>: A metric that counts how many defenders are bypassed by a single pass. <span class="citation" data-cites="rwth_packing">(<a href="#ref-rwth_packing" role="doc-biblioref">University 2016</a>)</span></p></li>
 </ul>
@@ -213,7 +225,17 @@ div.csl-indent {
 <section id="finding-the-similarity-score" class="level2">
 <h2 class="anchored" data-anchor-id="finding-the-similarity-score">Finding the “Similarity Score”</h2>
 <p>One of the most powerful tools in a data scientist’s arsenal is the Similarity Model. Imagine a club like Brighton &amp; Hove Albion is about to sell their main midfielder for $115 million. They need a replacement, but they don’t want to spend $115 million to get one.</p>
-<p>Using a technique like <strong>K-Nearest Neighbors (KNN)</strong>, analysts can create a mapping of their departing star. Then they search the global database for a “mathematical twin” – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely).</p>
+<p>Using a technique like <strong>K-Nearest Neighbors (KNN)</strong>, analysts can create a mapping of their departing star. Then they search the global database for a “mathematical twin” – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely). An example radar can be seen in <a href="#fig-radar" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div id="fig-radar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-radar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="radar-comparison.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-radar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Radar Chart for Danny Welbeck
+</figcaption>
+</figure>
+</div>
 <p>This is how clubs find undervalued gems. They don’t look for the most famous player but rather, they look for the most efficient statistical profile for their specific system.</p>
 </section>
 <section id="case-study-the-brighton-blueprint" class="level2">
