@@ -7,31 +7,73 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/recruitment-using-ds/index.html",
     "href": "posts/recruitment-using-ds/index.html",
     "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "In the high stakes world of the English Premier League (EPL), a single decision can be worth millions of pounds. Every summer, the Transfer Window opens, and a mad dash begins. Clubs scramble to replace aging stars, patch up leaky defenses, and find the next wunderkind. Traditionally, this was a world governed by the “eye test” – a process whereby experienced scouts would travel the world to watch certain players, often over multiple games, and then compile their judgement (mostly subjective) into a report, before submitting that to the manager and their staff.\nBut just like tactics and stadiums, scouting has also changed and evolved over the years. Today, the most influential scouts in the world aren’t just sitting in the stands; they are sitting behind Python scripts and SQL databases. Data science has moved from the sidelines to the center of the boardroom, adding a new, technological element to the beautiful game."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/recruitment-using-ds/index.html#introduction",
+    "href": "posts/recruitment-using-ds/index.html#introduction",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "In the high stakes world of the English Premier League (EPL), a single decision can be worth millions of pounds. Every summer, the Transfer Window opens, and a mad dash begins. Clubs scramble to replace aging stars, patch up leaky defenses, and find the next wunderkind. Traditionally, this was a world governed by the “eye test” – a process whereby experienced scouts would travel the world to watch certain players, often over multiple games, and then compile their judgement (mostly subjective) into a report, before submitting that to the manager and their staff.\nBut just like tactics and stadiums, scouting has also changed and evolved over the years. Today, the most influential scouts in the world aren’t just sitting in the stands; they are sitting behind Python scripts and SQL databases. Data science has moved from the sidelines to the center of the boardroom, adding a new, technological element to the beautiful game."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#the-inefficiency-of-the-eye-test",
+    "href": "posts/recruitment-using-ds/index.html#the-inefficiency-of-the-eye-test",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "The Inefficiency of the “Eye Test”",
+    "text": "The Inefficiency of the “Eye Test”\nFor decades, football recruitment was plagued by subjectivity and cognitive bias. A scout might watch a striker on a day when they happen to score a “one-in-a-million chance” from 30 yards out. The scout’s report would be glowing, resulting in the buying club paying a premium for the striker, who might then fail to replicate that fluke goal over the next three years. This is the small sample size trap.\nFurthermore, human scouts are limited by physics. One person can only watch so many games. There are over 100,000 professional footballers globally, playing in leagues from the second division in Japan to the top flight in Ecuador (Site 2023). To find a “hidden gem” in these overlooked markets using traditional methods would require an array of scouts and an astronomical travel budget.\nThis is where data science provides a massive competitive advantage. It allows a small team of analysts to “scout” most professional players on the planet, that too simultaneously, 24 hours a day."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#building-the-recruitment-funnel",
+    "href": "posts/recruitment-using-ds/index.html#building-the-recruitment-funnel",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "Building the Recruitment Funnel",
+    "text": "Building the Recruitment Funnel\nSo, how does a data scientist actually “find” a player? It begins with a process called the Recruitment Funnel.\n\nData Collection and Event Logs\nThe foundation of modern recruitment is Event Data. Companies like Opta and StatsBomb record mostly every action that happens on the pitch – every pass, tackle, interception, and shot, tagging them with coordinates and timestamps. A single match generates over 3,000 such events (Marketplace 2024). For a data scientist, this serves as the raw material.\n\n\nThe Global Filter\nInstead of flying to Brazil to find a defensive midfielder, an analyst can query a database: “Show me every player under age 23 in South America who averages more than 5 interceptions per game and has a pass completion rate of over 85%.” In a few seconds, a list of 5,000+ players is narrowed down to 50. This is the first stage of data driven scouting: Efficiency at scale.\n\n\nFeature Engineering: Moving Beyond the Basics\nWhile goals and assists are the most famous stats, they are often noisy and misleading. Data scientists use Feature Engineering to create more predictive metrics. (IBM 2024)\n\nExpected Goals (xG): Based on the position of the ball, the position of the goalkeeper etc., it measures how likely is it that a goal will be scored given those conditions. (xG 2024)\nProgressive Carries: Measures how far a player moves the ball toward the opponent’s goal. (Analyst 2024)\nPacking Rate: A metric that counts how many defenders are bypassed by a single pass. (University 2016)\n\nBy focusing on these “hidden” metrics, clubs can identify players who are performing well even if they aren’t on the top of the stats trackers."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#finding-the-similarity-score",
+    "href": "posts/recruitment-using-ds/index.html#finding-the-similarity-score",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "Finding the “Similarity Score”",
+    "text": "Finding the “Similarity Score”\nOne of the most powerful tools in a data scientist’s arsenal is the Similarity Model. Imagine a club like Brighton & Hove Albion is about to sell their main midfielder for $115 million. They need a replacement, but they don’t want to spend $115 million to get one.\nUsing a technique like K-Nearest Neighbors (KNN), analysts can create a mapping of their departing star. Then they search the global database for a “mathematical twin” – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely).\nThis is how clubs find undervalued gems. They don’t look for the most famous player but rather, they look for the most efficient statistical profile for their specific system."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#case-study-the-brighton-blueprint",
+    "href": "posts/recruitment-using-ds/index.html#case-study-the-brighton-blueprint",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "Case Study: The Brighton Blueprint",
+    "text": "Case Study: The Brighton Blueprint\nIf you want to see the “Moneyball” of football in action, look no further than Brighton & Hove Albion. The club was once languishing in the lower leagues of English football, close to insolvency. Today, it is competing with (and often beating) giants like Manchester United and Chelsea.\nTheir secret? They treated recruitment as a data science problem. Two of their big “hits” include:\n\nMoises Caicedo: Signed by Brighton for roughly $5 million from the Ecuadorian league after their data models flagged his elite ball winning capabilities. Two years later, he was sold to Chelsea for a British record $145 million.\nKaoru Mitoma: Discovered in the Japanese league. Data showed his dribbling success rate was among the best in the world. He was bought for a very low fee and has become one of the most feared wingers in the EPL (he is still at Brighton).\n\nBrighton have mastered the “Buy Low, Sell High” strategy. By using data to minimize the risk of a “transfer flop,” they have turned their recruitment department into a profit center. The money generated from the sale of players, such as Caicedo, is then reinvested into better facilities and even better data scientists, creating a virtuous cycle of success."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#the-challenge-measuring-the-invisible",
+    "href": "posts/recruitment-using-ds/index.html#the-challenge-measuring-the-invisible",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "The Challenge: Measuring the “Invisible”",
+    "text": "The Challenge: Measuring the “Invisible”\nDespite its power, data science in football has its hurdles. One of the biggest is the League Difficulty Adjustment. How do you compare a striker scoring 20 goals in the Austrian league to one scoring 10 goals in the Premier League? Data scientists have to build complex league coefficients to normalize these stats, ensuring they don’t overvalue a player simply because they are playing against weaker opposition. (ResearchGate 2024)\nFurthermore, data struggles to capture the human element. A spreadsheet cannot predict if a 19-year-old will get homesick upon moving from South America to London. Neither can it predict if a player will have the mental resilience to play in front of 60,000 fans."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#the-future-the-hybrid-model",
+    "href": "posts/recruitment-using-ds/index.html#the-future-the-hybrid-model",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "The Future: The Hybrid Model",
+    "text": "The Future: The Hybrid Model\nThe most successful clubs today do not rely on data alone. They use a Hybrid Model.\nIn this workflow, the data science team generates a shortlist – they act as the filter that reduces the 100,000s of players down to the 10 most suitable. Then, the traditional scouts take over. They go to watch those 10 players in person, focusing on the things data can’t see: body language, communication, and personality.\nThis is a synergistic marriage of AI and humans working together. The machine handles the heavy lifting of processing millions of data points, while the human provides the final layer of context and emotional intelligence."
+  },
+  {
+    "objectID": "posts/recruitment-using-ds/index.html#conclusion-the-new-way-of-winning",
+    "href": "posts/recruitment-using-ds/index.html#conclusion-the-new-way-of-winning",
+    "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
+    "section": "Conclusion: The New Way of Winning",
+    "text": "Conclusion: The New Way of Winning\nData science hasn’t taken the magic out of football; it has simply made it more technological. We are moving away from an era where the richest clubs win simply because they can splash the cash and afford to make expensive mistakes. In the modern era, the clubs that use data driven approaches are fast catching up, and in some cases, have even surpassed the ageing giants who have been slow to adopt data.\nAs Brighton have proven, one doesn’t need the biggest budget to compete with the best teams – just the best models. For any aspiring data scientist, football recruitment offers the perfect playground: a place where some lines of code can literally change the fortune of a club.\nThe next time you see a relatively unknown player signed for a small fee suddenly become a superstar, don’t just credit the “luck” of the club. Somewhere, in a darkened room, a data scientist is probably smiling at a scatter plot."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market",
     "section": "",
-    "text": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market\n\n\n\nFootball\n\nData Science\n\nRecruitment\n\n\n\n\n\n\n\n\n\nJan 13, 2026\n\n\nGaurang Ahuja\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 13, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 10, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "The Digital Scout: How Data Science is Disrupting the Football Transfer Market\n\n\n\nFootball\n\nData Science\n\nRecruitment\n\n\n\n\n\n\n\n\n\nJan 13, 2026\n\n\nGaurang Ahuja\n\n\n\n\n\nNo matching items"
   }
 ]

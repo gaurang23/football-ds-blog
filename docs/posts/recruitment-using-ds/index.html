@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -157,13 +177,99 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In the high stakes world of the English Premier League (EPL), a single decision can be worth millions of pounds. Every summer, the Transfer Window opens, and a mad dash begins. Clubs scramble to replace aging stars, patch up leaky defenses, and find the next wunderkind. Traditionally, this was a world governed by the “eye test” – a process whereby experienced scouts would travel the world to watch certain players, often over multiple games, and then compile their judgement (mostly subjective) into a report, before submitting that to the manager and their staff.</p>
+<p>But just like tactics and stadiums, scouting has also changed and evolved over the years. Today, the most influential scouts in the world aren’t just sitting in the stands; they are sitting behind Python scripts and SQL databases. Data science has moved from the sidelines to the center of the boardroom, adding a new, technological element to the beautiful game.</p>
+</section>
+<section id="the-inefficiency-of-the-eye-test" class="level2">
+<h2 class="anchored" data-anchor-id="the-inefficiency-of-the-eye-test">The Inefficiency of the “Eye Test”</h2>
+<p>For decades, football recruitment was plagued by subjectivity and cognitive bias. A scout might watch a striker on a day when they happen to score a “one-in-a-million chance” from 30 yards out. The scout’s report would be glowing, resulting in the buying club paying a premium for the striker, who might then fail to replicate that fluke goal over the next three years. This is the <strong>small sample size trap</strong>.</p>
+<p>Furthermore, human scouts are limited by physics. One person can only watch so many games. There are over 100,000 professional footballers globally, playing in leagues from the second division in Japan to the top flight in Ecuador <span class="citation" data-cites="fifpro_players">(<a href="#ref-fifpro_players" role="doc-biblioref">Site 2023</a>)</span>. To find a “hidden gem” in these overlooked markets using traditional methods would require an array of scouts and an astronomical travel budget.</p>
+<p>This is where data science provides a massive competitive advantage. It allows a small team of analysts to “scout” most professional players on the planet, that too simultaneously, 24 hours a day.</p>
+</section>
+<section id="building-the-recruitment-funnel" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-recruitment-funnel">Building the Recruitment Funnel</h2>
+<p>So, how does a data scientist actually “find” a player? It begins with a process called the <strong>Recruitment Funnel</strong>.</p>
+<section id="data-collection-and-event-logs" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-and-event-logs">Data Collection and Event Logs</h3>
+<p>The foundation of modern recruitment is <strong>Event Data</strong>. Companies like Opta and StatsBomb record mostly every action that happens on the pitch – every pass, tackle, interception, and shot, tagging them with coordinates and timestamps. A single match generates over 3,000 such events <span class="citation" data-cites="snowflake_opta">(<a href="#ref-snowflake_opta" role="doc-biblioref">Marketplace 2024</a>)</span>. For a data scientist, this serves as the raw material.</p>
+</section>
+<section id="the-global-filter" class="level3">
+<h3 class="anchored" data-anchor-id="the-global-filter">The Global Filter</h3>
+<p>Instead of flying to Brazil to find a defensive midfielder, an analyst can query a database: “Show me every player under age 23 in South America who averages more than 5 interceptions per game and has a pass completion rate of over 85%.” In a few seconds, a list of 5,000+ players is narrowed down to 50. This is the first stage of data driven scouting: <strong>Efficiency at scale</strong>.</p>
+</section>
+<section id="feature-engineering-moving-beyond-the-basics" class="level3">
+<h3 class="anchored" data-anchor-id="feature-engineering-moving-beyond-the-basics">Feature Engineering: Moving Beyond the Basics</h3>
+<p>While goals and assists are the most famous stats, they are often noisy and misleading. Data scientists use Feature Engineering to create more predictive metrics. <span class="citation" data-cites="ibm_feature">(<a href="#ref-ibm_feature" role="doc-biblioref">IBM 2024</a>)</span></p>
+<ul>
+<li><p><strong>Expected Goals (xG)</strong>: Based on the position of the ball, the position of the goalkeeper etc., it measures how likely is it that a goal will be scored given those conditions. <span class="citation" data-cites="football_xg">(<a href="#ref-football_xg" role="doc-biblioref">xG 2024</a>)</span></p></li>
+<li><p><strong>Progressive Carries</strong>: Measures how far a player moves the ball toward the opponent’s goal. <span class="citation" data-cites="progressive_carries">(<a href="#ref-progressive_carries" role="doc-biblioref">Analyst 2024</a>)</span></p></li>
+<li><p><strong>Packing Rate</strong>: A metric that counts how many defenders are bypassed by a single pass. <span class="citation" data-cites="rwth_packing">(<a href="#ref-rwth_packing" role="doc-biblioref">University 2016</a>)</span></p></li>
+</ul>
+<p>By focusing on these “hidden” metrics, clubs can identify players who are performing well even if they aren’t on the top of the stats trackers.</p>
+</section>
+</section>
+<section id="finding-the-similarity-score" class="level2">
+<h2 class="anchored" data-anchor-id="finding-the-similarity-score">Finding the “Similarity Score”</h2>
+<p>One of the most powerful tools in a data scientist’s arsenal is the Similarity Model. Imagine a club like Brighton &amp; Hove Albion is about to sell their main midfielder for $115 million. They need a replacement, but they don’t want to spend $115 million to get one.</p>
+<p>Using a technique like <strong>K-Nearest Neighbors (KNN)</strong>, analysts can create a mapping of their departing star. Then they search the global database for a “mathematical twin” – a younger, cheaper player whose statistical output matches the departing player (the shape of their radar charts overlap almost entirely).</p>
+<p>This is how clubs find undervalued gems. They don’t look for the most famous player but rather, they look for the most efficient statistical profile for their specific system.</p>
+</section>
+<section id="case-study-the-brighton-blueprint" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-the-brighton-blueprint">Case Study: The Brighton Blueprint</h2>
+<p>If you want to see the “Moneyball” of football in action, look no further than Brighton &amp; Hove Albion. The club was once languishing in the lower leagues of English football, close to insolvency. Today, it is competing with (and often beating) giants like Manchester United and Chelsea.</p>
+<p>Their secret? They treated recruitment as a data science problem. Two of their big “hits” include:</p>
+<ul>
+<li><p><strong>Moises Caicedo</strong>: Signed by Brighton for roughly $5 million from the Ecuadorian league after their data models flagged his elite ball winning capabilities. Two years later, he was sold to Chelsea for a British record $145 million.</p></li>
+<li><p><strong>Kaoru Mitoma</strong>: Discovered in the Japanese league. Data showed his dribbling success rate was among the best in the world. He was bought for a very low fee and has become one of the most feared wingers in the EPL (he is still at Brighton).</p></li>
+</ul>
+<p>Brighton have mastered the “Buy Low, Sell High” strategy. By using data to minimize the risk of a “transfer flop,” they have turned their recruitment department into a profit center. The money generated from the sale of players, such as Caicedo, is then reinvested into better facilities and even better data scientists, creating a virtuous cycle of success.</p>
+</section>
+<section id="the-challenge-measuring-the-invisible" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge-measuring-the-invisible">The Challenge: Measuring the “Invisible”</h2>
+<p>Despite its power, data science in football has its hurdles. One of the biggest is the <strong>League Difficulty Adjustment</strong>. How do you compare a striker scoring 20 goals in the Austrian league to one scoring 10 goals in the Premier League? Data scientists have to build complex league coefficients to normalize these stats, ensuring they don’t overvalue a player simply because they are playing against weaker opposition. <span class="citation" data-cites="translating_talent">(<a href="#ref-translating_talent" role="doc-biblioref">ResearchGate 2024</a>)</span></p>
+<p>Furthermore, data struggles to capture the human element. A spreadsheet cannot predict if a 19-year-old will get homesick upon moving from South America to London. Neither can it predict if a player will have the mental resilience to play in front of 60,000 fans.</p>
+</section>
+<section id="the-future-the-hybrid-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-future-the-hybrid-model">The Future: The Hybrid Model</h2>
+<p>The most successful clubs today do not rely on data alone. They use a <strong>Hybrid Model</strong>.</p>
+<p>In this workflow, the data science team generates a shortlist – they act as the filter that reduces the 100,000s of players down to the 10 most suitable. Then, the traditional scouts take over. They go to watch those 10 players in person, focusing on the things data can’t see: body language, communication, and personality.</p>
+<p>This is a synergistic marriage of AI and humans working together. The machine handles the heavy lifting of processing millions of data points, while the human provides the final layer of context and emotional intelligence.</p>
+</section>
+<section id="conclusion-the-new-way-of-winning" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-the-new-way-of-winning">Conclusion: The New Way of Winning</h2>
+<p>Data science hasn’t taken the magic out of football; it has simply made it more technological. We are moving away from an era where the richest clubs win simply because they can splash the cash and afford to make expensive mistakes. In the modern era, the clubs that use data driven approaches are fast catching up, and in some cases, have even surpassed the ageing giants who have been slow to adopt data.</p>
+<p>As Brighton have proven, one doesn’t need the biggest budget to compete with the best teams – just the best models. For any aspiring data scientist, football recruitment offers the perfect playground: a place where some lines of code can literally change the fortune of a club.</p>
+<p>The next time you see a relatively unknown player signed for a small fee suddenly become a superstar, don’t just credit the “luck” of the club. Somewhere, in a darkened room, a data scientist is probably smiling at a scatter plot.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-progressive_carries" class="csl-entry" role="listitem">
+Analyst, The Football. 2024. <span>“Progressive Carries in Football Statistics Explained.”</span> 2024. <a href="https://the-footballanalyst.com/progressive-carries-football-statistics-explained/">https://the-footballanalyst.com/progressive-carries-football-statistics-explained/</a>.
+</div>
+<div id="ref-ibm_feature" class="csl-entry" role="listitem">
+IBM. 2024. <span>“What Is Feature Engineering?”</span> 2024. <a href="https://www.ibm.com/think/topics/feature-engineering">https://www.ibm.com/think/topics/feature-engineering</a>.
+</div>
+<div id="ref-snowflake_opta" class="csl-entry" role="listitem">
+Marketplace, Snowflake. 2024. <span>“Stats Perform Opta Data Football Sample.”</span> 2024. <a href="https://app.snowflake.com/marketplace/listing/GZSVZCB692/stats-perform-opta-data-football-sample">https://app.snowflake.com/marketplace/listing/GZSVZCB692/stats-perform-opta-data-football-sample</a>.
+</div>
+<div id="ref-translating_talent" class="csl-entry" role="listitem">
+ResearchGate. 2024. <span>“Translating Talent: A Cross-League Plus-Minus Approach in Soccer.”</span> <a href="https://www.researchgate.net/publication/395665209_Translating_Talent_A_Cross-League_Plus-Minus_Approach_in_Soccer">https://www.researchgate.net/publication/395665209_Translating_Talent_A_Cross-League_Plus-Minus_Approach_in_Soccer</a>.
+</div>
+<div id="ref-fifpro_players" class="csl-entry" role="listitem">
+Site, The Wolves. 2023. <span>“How Many Professional Soccer Players Are There Worldwide?”</span> 2023. <a href="http://thewolvessite.co.uk/how-many-professional-soccer-players-are-there-worldwide">http://thewolvessite.co.uk/how-many-professional-soccer-players-are-there-worldwide</a>.
+</div>
+<div id="ref-rwth_packing" class="csl-entry" role="listitem">
+University, RWTH Aachen. 2016. <span>“Packing Rate: The Art of Bypassing Defenders.”</span> 2016. <a href="https://www.rwth-aachen.de/cms/root/wir/aktuell/pressemitteilungen/juni/~ljyt/packing-rate-die-kunst-des-ueberspiele/">https://www.rwth-aachen.de/cms/root/wir/aktuell/pressemitteilungen/juni/~ljyt/packing-rate-die-kunst-des-ueberspiele/</a>.
+</div>
+<div id="ref-football_xg" class="csl-entry" role="listitem">
+xG, Football. 2024. <span>“Expected Goals Explained.”</span> 2024. <a href="https://footballxg.com/">https://footballxg.com/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
