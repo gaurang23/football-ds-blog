@@ -4,19 +4,20 @@ project:
 
 website:
   title: "Football + Data Science"
+  site-url: "https://gaurang23.github.io/football-ds-blog/"
   navbar:
     right:
-      - about.qmd
+      # - text: "About"
+      #   href: about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: "https://github.com/gaurang23/football-ds-blog/"
+      # - icon: twitter
+      #   href: https://twitter.com
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
+    toc: true
 
 
 

@@ -94,7 +94,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -111,17 +111,8 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/gaurang23/football-ds-blog/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -169,7 +160,27 @@ div.csl-indent {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-inefficiency-of-the-eye-test" id="toc-the-inefficiency-of-the-eye-test" class="nav-link" data-scroll-target="#the-inefficiency-of-the-eye-test">The Inefficiency of the “Eye Test”</a></li>
+  <li><a href="#building-the-recruitment-funnel" id="toc-building-the-recruitment-funnel" class="nav-link" data-scroll-target="#building-the-recruitment-funnel">Building the Recruitment Funnel</a>
+  <ul class="collapse">
+  <li><a href="#data-collection-and-event-logs" id="toc-data-collection-and-event-logs" class="nav-link" data-scroll-target="#data-collection-and-event-logs">Data Collection and Event Logs</a></li>
+  <li><a href="#the-global-filter" id="toc-the-global-filter" class="nav-link" data-scroll-target="#the-global-filter">The Global Filter</a></li>
+  <li><a href="#feature-engineering-moving-beyond-the-basics" id="toc-feature-engineering-moving-beyond-the-basics" class="nav-link" data-scroll-target="#feature-engineering-moving-beyond-the-basics">Feature Engineering: Moving Beyond the Basics</a></li>
+  </ul></li>
+  <li><a href="#finding-the-similarity-score" id="toc-finding-the-similarity-score" class="nav-link" data-scroll-target="#finding-the-similarity-score">Finding the “Similarity Score”</a></li>
+  <li><a href="#case-study-the-brighton-blueprint" id="toc-case-study-the-brighton-blueprint" class="nav-link" data-scroll-target="#case-study-the-brighton-blueprint">Case Study: The Brighton Blueprint</a></li>
+  <li><a href="#the-challenge-measuring-the-invisible" id="toc-the-challenge-measuring-the-invisible" class="nav-link" data-scroll-target="#the-challenge-measuring-the-invisible">The Challenge: Measuring the “Invisible”</a></li>
+  <li><a href="#the-future-the-hybrid-model" id="toc-the-future-the-hybrid-model" class="nav-link" data-scroll-target="#the-future-the-hybrid-model">The Future: The Hybrid Model</a></li>
+  <li><a href="#conclusion-the-new-way-of-winning" id="toc-conclusion-the-new-way-of-winning" class="nav-link" data-scroll-target="#conclusion-the-new-way-of-winning">Conclusion: The New Way of Winning</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -364,7 +375,7 @@ xG, Football. 2024. <span>“Expected Goals Explained.”</span> 2024. <a href="
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gaurang23\.github\.io\/football-ds-blog\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
